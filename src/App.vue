@@ -42,8 +42,16 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+body {
+  background: #292b2f;
+}
+p {
+  margin: 0;
+}
 ul {
   list-style-type: none;
   padding: 0;
+  width: 50vw;
+  margin: 0 auto;
 }
 </style>

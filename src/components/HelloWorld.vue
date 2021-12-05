@@ -1,9 +1,10 @@
 <template>
   <div class="hello">
-    <p>{{ message.username }}</p>
-    <p>{{ message.timestamp }}</p>
+    <div class="profilePic"></div>
+    <div class="profileContent">Hallo</div>
+    <!-- <p>{{ message.username }}</p>
+    <p>{{ message.timestamp }}</p> -->
   </div>
-  <br />
 </template>
 
 <script>
@@ -17,13 +18,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.hello {
+  background: #36393f;
+  color: #b9bbbe;
+  margin: 1em;
+  padding: 1em;
+}
+.profilePic {
+  width: 64px;
+  height: 64px;
+  background: green;
+}
+.profileContent {
+  width: fit-content;
+  height: 64px;
+  background: red;
 }
 
 li {
   display: inline-block;
-  margin: 0 10px;
 }
 a {
   color: #42b983;
