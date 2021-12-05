@@ -1,13 +1,15 @@
 <template>
-  <div class="hello">
+  <div class="message-box">
     <div class="basic-grid">
-      <div class="profilePic">Picture</div>
-      <div class="profileContent">Hallo</div>
+      <div class="profile-pic">
+        <img src="./../assets/mama.jpg" alt="">
+      </div>
+      <div class="profileContent">
+        <span class="user-color">{{ message.username }}</span>
+        {{ message.timestamp }}
+      </div>
     </div>
-    <div class="basic-grid">
-    </div>
-    <!-- <p>{{ message.username }}</p>
-    <p>{{ message.timestamp }}</p> -->
+    <div class="basic-grid"></div>
   </div>
 </template>
 
@@ -28,17 +30,27 @@ export default {
   grid-template-columns: 64px auto;
 }
 
-.hello {
+.user-color {
+  color: rgb(52, 152, 219);
+  font-weight: bold;
+}
+
+.message-box {
   background: #36393f;
   color: #b9bbbe;
   margin: 1em;
   padding: 1em;
+  border-radius: 3px;
 }
-.profilePic {
+.profile-pic {
   background: green;
+  height: 64px;
+}
+.profile-pic img {
+  width: 100%;
 }
 .profileContent {
-  background: red;
+  /* background: red; */
 }
 
 li {
