@@ -1,6 +1,6 @@
 # archiveslimes
 
-https://biggorillabutt.azurewebsites.net/
+https://lemon-wave-09f70830f.azurestaticapps.net/
 
 ## Prerequisites
 
