@@ -2,11 +2,14 @@
   <div class="message-box">
     <div class="basic-grid">
       <div class="profile-pic">
-        <img src="./../assets/mama.jpg" alt="">
+        <img :src="message.pictureURL" alt="">
       </div>
       <div class="profileContent">
-        <span class="user-color">{{ message.username }}</span>
+        <div class="profile-info">
+          <span class="user-color">{{ message.username }}</span>
         {{ message.timestamp }}
+        </div>
+        {{ message.messageBody }}
       </div>
     </div>
     <div class="basic-grid"></div>
@@ -38,12 +41,14 @@ export default {
 .message-box {
   background: #36393f;
   color: #b9bbbe;
-  margin: 1em;
-  padding: 1em;
+  margin: 1rem;
+  padding: 1.125rem;
   border-radius: 3px;
 }
+.profile-info {
+  margin-bottom: 0.5rem;
+}
 .profile-pic {
-  background: green;
   height: 64px;
 }
 .profile-pic img {
