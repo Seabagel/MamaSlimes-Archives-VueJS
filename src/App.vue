@@ -1,5 +1,6 @@
 <template>
-  <img alt="Vue logo" src="./assets/mama.jpg" />
+  <img alt="logo" src="./assets/mama.jpg" />
+  <h1 alt="app_name">Mama Slime Archives</h1>
   <ul>
     <li v-for="index in 10" :key="index">
       <HelloWorld
@@ -34,12 +35,20 @@ export default {
 </script>
 
 <style>
+img {
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto
+}
+h1[alt=app_name] {
+  text-align: center;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: #b9bbbe;
   margin-top: 60px;
 }
 body {
@@ -51,7 +60,9 @@ p {
 ul {
   list-style-type: none;
   padding: 0;
-  width: 50vw;
+  width: 75vw;
+  min-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
 }
 </style>

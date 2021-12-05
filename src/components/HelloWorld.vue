@@ -1,7 +1,11 @@
 <template>
   <div class="hello">
-    <div class="profilePic"></div>
-    <div class="profileContent">Hallo</div>
+    <div class="basic-grid">
+      <div class="profilePic">Picture</div>
+      <div class="profileContent">Hallo</div>
+    </div>
+    <div class="basic-grid">
+    </div>
     <!-- <p>{{ message.username }}</p>
     <p>{{ message.timestamp }}</p> -->
   </div>
@@ -18,6 +22,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.basic-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 64px auto;
+}
+
 .hello {
   background: #36393f;
   color: #b9bbbe;
@@ -25,13 +35,9 @@ export default {
   padding: 1em;
 }
 .profilePic {
-  width: 64px;
-  height: 64px;
   background: green;
 }
 .profileContent {
-  width: fit-content;
-  height: 64px;
   background: red;
 }
 
