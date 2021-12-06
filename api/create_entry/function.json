@@ -13,6 +13,17 @@
       "type": "http",
       "direction": "out",
       "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outputDocument",
+      "databaseName": "outDatabase",
+      "collectionName": "MyCollection",
+      "createIfNotExists": true,
+      "connectionStringSetting": "slimeappcosmosdb_DOCUMENTDB",
+      "partitionKey": "/messageID",
+      "collectionThroughput": ""
     }
   ]
 }
