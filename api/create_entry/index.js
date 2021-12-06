@@ -7,14 +7,12 @@ module.exports = async function (context, req) {
   try {
     const rb = req.body;
 
-    if (rb.id && rb.username && rb.messageBody) {
+    if (rb.messageId && rb.username && rb.messageBody) {
       const data = {
-        id: rb.id,
+        messageId: rb.messageId,
         username: rb.username,
         messageBody: rb.messageBody,
       };
-
-      context.bindings.outputDocument = data;
 
       context.res = {
         status: 201, // Success
@@ -25,6 +23,7 @@ module.exports = async function (context, req) {
       };
 
       context.log(`${consolePrefix}Status: 201 Success`);
+      context.done();
     } else {
       context.res = {
         status: 400, // Bad Request
