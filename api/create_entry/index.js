@@ -1,5 +1,7 @@
+const consolePrefix = "Creating Entry - ";
+
 module.exports = async function (context, req) {
-  context.log("Creating Entry - start");
+  context.log(`${consolePrefix}Started`);
 
   // Try reading the body
   try {
@@ -22,12 +24,12 @@ module.exports = async function (context, req) {
         body: data,
       };
 
-      context.log("Status: 201 Success");
+      context.log(`${consolePrefix}Status: 201 Success`);
     } else {
       context.res = {
         status: 400, // Bad Request
       };
-      context.log("Status: 400 Bad Request");
+      context.log(`${consolePrefix}Status: 400 Bad Request`);
     }
 
     // Catch Errors
@@ -35,9 +37,9 @@ module.exports = async function (context, req) {
     context.res = {
       status: 500, // Internal Server Error
     };
-    context.log("Status: 500 Internal Server Error");
+    context.log(`${consolePrefix}Status: 500 Internal Server Error`);
   }
 
+  context.log(`${consolePrefix}Done`);
   context.done();
-  context.log("Creating Entry - finished");
 };
