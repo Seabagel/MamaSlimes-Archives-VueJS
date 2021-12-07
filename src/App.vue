@@ -12,6 +12,7 @@
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 const data = require("./data.json");
+const fetch = require("node-fetch");
 
 export default {
   name: "App",
@@ -25,11 +26,10 @@ export default {
     HelloWorld,
   },
   async mounted() {
-    const myData = await fetch(
+    let response = await fetch(
       "/api/create_entry?message_id=1012093209&username=Fatcock&msgbody=Durkadurkadurk"
     );
-    this.message = myData;
-    console.log(myData);
+    console.log(await response.json());
   },
 };
 </script>

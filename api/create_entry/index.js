@@ -20,9 +20,12 @@ module.exports = async function (context, req) {
       //   headers: {
       //     "content-type": "application/json",
       //   },
+      //   // body: "Hello world",
       // };
 
-      context.res.json(data)
+      context.res.json({
+        data: data,
+      });
 
       context.log(`${consolePrefix}Status: 201 Success`);
     } else {

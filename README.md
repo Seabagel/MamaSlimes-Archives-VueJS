@@ -44,6 +44,8 @@ serve
   - npm install -g @azure/static-web-apps-cli
   - npm install -g @azure/functions (For typescript only)
   - npm install -g azure-functions-core-tools@3
+  - npm install node-fetch@2.0
+    - need to use an older node-fetch because of Node v14 ([node-fetch website](https://stackabuse.com/making-http-requests-in-node-js-with-node-fetch/))
   - Build project with `npm run build`
   - Start the Function and the built website together (Starts 2 separate IP hosts) `npm run api` 
 
