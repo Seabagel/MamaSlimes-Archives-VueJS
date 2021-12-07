@@ -5,13 +5,13 @@ module.exports = async function (context, req) {
 
   // Try reading the body
   try {
-    const rb = req.body;
+    const rq = req.query;
 
-    if (rb.messageId && rb.username && rb.messageBody) {
+    if (rq.message_id && rq.username && rq.msgbody) {
       const data = {
-        messageId: rb.messageId,
-        username: rb.username,
-        messageBody: rb.messageBody,
+        message_id: rq.message_id,
+        username: rq.username,
+        msgbody: rq.msgbody,
       };
 
       context.res = {
