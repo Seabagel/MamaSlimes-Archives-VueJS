@@ -40,8 +40,10 @@ serve
 - If you just open the `index.html` without using a server, your console log will output `failed-to-load-resource-the-server-responded-with-a-status-of-404-not-found`
 
 ## Launch with Azure Functions API 
+- [Followed this guide](https://docs.microsoft.com/en-us/azure/static-web-apps/add-api?tabs=vue) to figure out how to add Functions that work together with a Static Web App in a single repository
+    - The payload from the Functions server needs to be formatted like `context.res.json(payload);`
+    - On the receiving Front End, need to use await `fetch(...).json().then(...)` to catch the payload
 - Prerequisites: (Need sudo on Linux/Mac)
-  - [Followed this guide](https://docs.microsoft.com/en-us/azure/static-web-apps/add-api?tabs=vue) to figure out how to add Functions that work together with a Static Web App in a single repository
   - npm install -g @azure/static-web-apps-cli
   - npm install -g @azure/functions (For typescript only)
   - npm install -g azure-functions-core-tools@3
