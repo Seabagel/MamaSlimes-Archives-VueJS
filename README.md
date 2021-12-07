@@ -2,6 +2,9 @@
 
 https://lemon-wave-09f70830f.azurestaticapps.net/
 
+## TODO:
+[ ] Need to convert # and / signs into unicode or something, it'll break the HTTP request query parameter
+
 ## Prerequisites
 
 - Install Node.js
