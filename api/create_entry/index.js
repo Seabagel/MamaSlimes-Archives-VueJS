@@ -13,6 +13,8 @@ module.exports = async function (context, req) {
         message_id: rq.message_id,
         username: rq.username,
         msgbody: rq.msgbody,
+        timestamp: rq.timestamp,
+        pictureURL: rq.pictureURL
       };
 
       // context.res = {
