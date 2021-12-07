@@ -4,7 +4,12 @@ https://lemon-wave-09f70830f.azurestaticapps.net/
 
 ## TODO:
 [ ] Need to convert # and / signs into unicode or something, it'll break the HTTP request query parameter
-
+[ ] Make OutputBinding to Azure CosmosDB
+[ ] Instead of pushing new items, use an Array function like map to append the data
+[ ] Send an API in POST form
+[ ] Use Discord bot to create database entry
+[ ] Refresh the page every x seconds to update new data
+ 
 ## Prerequisites
 
 - Install Node.js
