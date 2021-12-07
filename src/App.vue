@@ -4,6 +4,7 @@
   <ul>
     <li v-for="index in data" :key="index">
       <HelloWorld :message="index" />
+      <p>{{ message }}</p>
     </li>
   </ul>
 </template>
@@ -21,6 +22,15 @@ export default {
   },
   components: {
     HelloWorld,
+  },
+  async mounted() {
+    const { text } = await (
+      await fetch(
+        "/api/create_entry?message_id=1012093209&username=Fatcock&msgbody=Durkadurkadurk"
+      )
+    ).json();
+    this.message = text;
+    console.log(message)
   },
 };
 </script>

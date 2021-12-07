@@ -43,6 +43,7 @@ serve
 - Prerequisites: (Need sudo on Linux/Mac)
   - npm install -g @azure/static-web-apps-cli
   - npm install -g @azure/functions (For typescript only)
+  - npm install -g azure-functions-core-tools@3
   - Build project with `npm run build`
   - Start the Function and the built website together (Starts 2 separate IP hosts) `npm run api` 
 
