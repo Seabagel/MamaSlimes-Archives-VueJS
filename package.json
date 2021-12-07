@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "api": "swa start dist --api-location api"
   },
   "dependencies": {
+    "@azure/static-web-apps-cli": "^0.8.1",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
