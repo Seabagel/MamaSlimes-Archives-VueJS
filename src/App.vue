@@ -2,34 +2,48 @@
   <img alt="logo" src="./assets/mama.jpg" />
   <h1 alt="app_name">Mama Slime Archives</h1>
   <ul>
-    <li v-for="index in data" :key="index">
+    <li v-for="index in messages" :key="index">
       <HelloWorld :message="index" />
-      <p>{{ message }}</p>
+      <p>{{ index }}</p>
     </li>
   </ul>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-const data = require("./data.json");
 const fetch = require("node-fetch");
 
 export default {
   name: "App",
   data() {
     return {
-      data: data,
-      message: {},
+      messages: [],
     };
   },
   components: {
     HelloWorld,
   },
   async mounted() {
-    let response = await fetch(
-      "/api/create_entry?message_id=1012093209&username=Fatcock&msgbody=Durkadurkadurk"
-    );
-    console.log(await response.json());
+    let response = await (
+      await fetch(
+        "http://localhost:7071/api/create_entry?message_id=350989871411625987&username=🎭 Kamen6885&msgbody=POOR STRESS WORK POOR STRESS STOP WORK DRINK DRINK DRINK HANGOVER DRINK HANGOVER DRINK VIOLENT OUTBURST DRINK DEFAULT ON DEBTS DRINK MORTGAGE HOUSE DRINK WIFE LEAVE HIM DRINK SCLEROSIS NO FRIENDS IGNORANT MAKE HIS COUNTRY A SHITHOLE JUST STOP WORKING&timestamp=07/03/2021&pictureURL=https://cdn.discordapp.com/avatars/611794676604993555/3e6186b8c488ae76a04f56ae195df4f7.webp?size=128"
+      )
+    )
+      .json()
+      .then((res) => {
+        this.messages.push(res);
+        // console.log(res);
+      });
+    let response2 = await (
+      await fetch(
+        "http://localhost:7071/api/create_entry?message_id=350989871411625987&username=🎭 Pudding&msgbody=Hello World&timestamp=12/18/2021"
+      )
+    )
+      .json()
+      .then((res) => {
+        this.messages.push(res);
+        console.log(res);
+      });
   },
 };
 </script>

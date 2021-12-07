@@ -2,14 +2,14 @@
   <div class="message-box">
     <div class="basic-grid">
       <div class="profile-pic">
-        <img :src="message.pictureURL" alt="">
+        <img :src="pictureURL" alt="">
       </div>
       <div class="profileContent">
         <div class="profile-info">
           <span class="user-color">{{ message.username }}</span>
         {{ message.timestamp }}
         </div>
-        {{ message.messageBody }}
+        {{ message.msgbody }}
       </div>
     </div>
     <div class="basic-grid"></div>
@@ -22,6 +22,11 @@ export default {
   props: {
     message: Object,
   },
+  data() {
+    return {
+      pictureURL: "https://cdn.discordapp.com/avatars/611794676604993555/3e6186b8c488ae76a04f56ae195df4f7.webp?size=128"
+    }
+  }
 };
 </script>
 

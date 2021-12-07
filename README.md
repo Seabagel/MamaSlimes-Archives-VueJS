@@ -41,6 +41,7 @@ serve
 
 ## Launch with Azure Functions API 
 - Prerequisites: (Need sudo on Linux/Mac)
+  - [Followed this guide](https://docs.microsoft.com/en-us/azure/static-web-apps/add-api?tabs=vue) to figure out how to add Functions that work together with a Static Web App in a single repository
   - npm install -g @azure/static-web-apps-cli
   - npm install -g @azure/functions (For typescript only)
   - npm install -g azure-functions-core-tools@3

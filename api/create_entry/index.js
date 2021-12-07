@@ -9,7 +9,7 @@ module.exports = async function (context, req) {
 
     if (rq.message_id && rq.username && rq.msgbody) {
       // Compile data from parameter query
-      const data = {
+      const payload = {
         message_id: rq.message_id,
         username: rq.username,
         msgbody: rq.msgbody,
@@ -23,9 +23,7 @@ module.exports = async function (context, req) {
       //   // body: "Hello world",
       // };
 
-      context.res.json({
-        data: data,
-      });
+      context.res.json(payload);
 
       context.log(`${consolePrefix}Status: 201 Success`);
     } else {
