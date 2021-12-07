@@ -8,23 +8,22 @@ module.exports = async function (context, req) {
     const rq = req.query;
 
     if (rq.message_id && rq.username && rq.msgbody) {
-      // Compile data from parameter query
       const data = {
         message_id: rq.message_id,
         username: rq.username,
         msgbody: rq.msgbody,
       };
 
-      // context.res = {
-      //   status: 201, // Success
-      //   headers: {
-      //     "content-type": "application/json",
-      //   },
-      // };
-
-      context.res.json(data)
+      context.res = {
+        status: 201, // Success
+        headers: {
+          "content-type": "application/json",
+        },
+        body: data,
+      };
 
       context.log(`${consolePrefix}Status: 201 Success`);
+      context.done();
     } else {
       context.res = {
         status: 400, // Bad Request

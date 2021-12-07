@@ -18,19 +18,18 @@ export default {
   data() {
     return {
       data: data,
+      message: {},
     };
   },
   components: {
     HelloWorld,
   },
   async mounted() {
-    const { text } = await (
-      await fetch(
-        "/api/create_entry?message_id=1012093209&username=Fatcock&msgbody=Durkadurkadurk"
-      )
-    ).json();
-    this.message = text;
-    console.log(message)
+    const myData = await fetch(
+      "/api/create_entry?message_id=1012093209&username=Fatcock&msgbody=Durkadurkadurk"
+    );
+    this.message = myData;
+    console.log(myData);
   },
 };
 </script>
