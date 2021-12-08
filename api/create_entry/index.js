@@ -1,48 +1,45 @@
-const consolePrefix = "Creating Entry - ";
-
 module.exports = async function (context, req) {
-  context.log(`${consolePrefix}Started`);
+  context.log(`Function create_entry has Started`);
 
   // Try reading the body
   try {
     const rq = req.query;
 
-    if (rq.message_id && rq.username && rq.msgbody) {
-      // Compile data from parameter query
+    if (
+      rq.message_id &&
+      rq.username &&
+      rq.msgbody &&
+      rq.timestamp &&
+      rq.pictureURL
+    ) {
       const payload = {
         message_id: rq.message_id,
         username: rq.username,
         msgbody: rq.msgbody,
         timestamp: rq.timestamp,
-        pictureURL: rq.pictureURL
+        pictureURL: rq.pictureURL,
       };
 
-      // context.res = {
-      //   status: 201, // Success
-      //   headers: {
-      //     "content-type": "application/json",
-      //   },
-      //   // body: "Hello world",
-      // };
-
-      context.res.json(payload);
-
-      context.log(`${consolePrefix}Status: 201 Success`);
+      context.bindings.outputDocument = JSON.stringify(payload);
+      // Send payload
     } else {
-      context.res = {
-        status: 400, // Bad Request
-      };
-      context.log(`${consolePrefix}Status: 400 Bad Request`);
+      context.log(`Incomplete request`);
     }
 
+    context.res = {
+      headers: {
+        "content-type": "application/json",
+      },
+      body: "Success",
+    };
     // Catch Errors
   } catch (error) {
     context.res = {
-      status: 500, // Internal Server Error
+      body: error,
     };
-    context.log(`${consolePrefix}Status: 500 Internal Server Error`);
+    context.log(error);
   }
 
-  context.log(`${consolePrefix}Done`);
+  context.log(`Function create_entry has Ended`);
   context.done();
 };
