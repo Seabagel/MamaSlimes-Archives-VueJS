@@ -1,11 +1,16 @@
 <template>
   <img alt="logo" src="./assets/mama.jpg" />
   <h1 alt="app_name">Mama Slime Archives</h1>
-  <ul>
-    <li v-for="index in messages" :key="index">
-      <HelloWorld :message="index" />
-    </li>
-  </ul>
+  <div v-if="messages.length > 0">
+    <ul>
+      <li v-for="index in messages" :key="index">
+        <HelloWorld :message="index" />
+      </li>
+    </ul>
+  </div>
+  <div v-if="messages.length == 0">
+    <img src="https://cdn-images-1.medium.com/max/800/0*zzg_YoHtb5wXe98Z.gif" alt="">
+  </div>
 </template>
 
 <script>
@@ -23,13 +28,7 @@ export default {
     HelloWorld,
   },
   methods: {
-    async createEntryAPI(
-      message_id,
-      username,
-      msgbody,
-      timestamp,
-      pictureURL
-    ) {
+    async createEntryAPI(message_id, username, msgbody, timestamp, pictureURL) {
       await (
         await fetch(
           `/api/create_entry?message_id=${message_id}&username=${username}&msgbody=${msgbody}&timestamp=${timestamp}&pictureURL=${pictureURL}`
@@ -59,7 +58,6 @@ export default {
     //   "07/03/2021",
     //   "https://cdn.discordapp.com/avatars/611794676604993555/3e6186b8c488ae76a04f56ae195df4f7.webp?size=128"
     // );
-
     // this.createEntryAPI(
     //   this.messages,
     //   350989871411625987,
@@ -90,7 +88,7 @@ h1[alt="app_name"] {
   margin-top: 60px;
 }
 body {
-  background: #292b2f;
+  background: #0f111f;
 }
 p {
   margin: 0;
