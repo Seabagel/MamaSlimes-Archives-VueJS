@@ -18,11 +18,11 @@
     {
       "type": "cosmosDB",
       "direction": "in",
-      "name": "outputDocument",
+      "name": "inputDocument",
       "databaseName": "outDatabase",
       "collectionName": "MyCollection",
       "connectionStringSetting": "slimeappcosmosdb_DOCUMENTDB",
-      "sqlQuery": "SELECT * FROM c"
+      "sqlQuery": "SELECT * from c"
     }
   ]
 }
