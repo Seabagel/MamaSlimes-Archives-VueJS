@@ -1,20 +1,15 @@
-module.exports = function (context, input) {
+module.exports = async function (context, req) {
   context.log(`Function read_entries has Started`);
+  let documents;
   try {
-    var documents = context.bindings.inputDocument;
-    context.res.json(documents);
-    context.res = {
-      headers: {
-        "content-type": "application/json",
-      },
-      body: "Success",
-    };
+    documents = await context.bindings.inputDocument.then((res) =>
+      context.res.json(res)
+    );
   } catch (error) {
     context.res = {
-        body: error,
-      };
-      context.log(error);
+      body: error,
+    };
+    context.log(error);
   }
   context.log(`Function read_entries has Ended`);
-  context.done();
 };
