@@ -84,11 +84,11 @@ h1[alt="app_name"] {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #b9bbbe;
   margin-top: 60px;
 }
 body {
   background: #0f111f;
+  color: #90aeda;
 }
 p {
   margin: 0;

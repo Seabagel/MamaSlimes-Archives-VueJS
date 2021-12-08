@@ -39,8 +39,7 @@ export default {
 }
 
 .message-box {
-  background: #36393f;
-  color: #b9bbbe;
+  background: #20293a;
   margin: 1rem;
   padding: 1.125rem;
   border-radius: 3px;
