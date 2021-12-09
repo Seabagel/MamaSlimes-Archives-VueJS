@@ -1,15 +1,9 @@
 {
     "$schema": "http://json.schemastore.org/proxies",
     "proxies": {
-        "create_entry": {
-            "matchCondition": {
-                "route": "/api/create_entry/{*restOfPath}"
-            },
-            "backendUri": "https://mamaslimes-archives-function.azurewebsites.net/api/create_entry/"
-        },
         "read_entries": {
             "matchCondition": {
-                "route": "/api/read_entries/{*restOfPath}"
+                "route": "/api/read_entries/"
             },
             "backendUri": "https://mamaslimes-archives-function.azurewebsites.net/api/read_entries/"
         }
