@@ -44,7 +44,7 @@ export default {
     },
 
     async readEntriesAPI() {
-      await (await fetch(`/api/read_entries`)).json().then((res) => {
+      await (await fetch(`https://mamaslimes-archives-function.azurewebsites.net/api/read_entries/`)).json().then((res) => {
         console.log(res);
         this.messages = res;
       });
