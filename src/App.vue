@@ -116,7 +116,6 @@ ul {
 }
 div.responsive {
   margin: 0 auto;
-  width: 50vw;
   min-width: 250px;
   max-width: 500px;
 }
