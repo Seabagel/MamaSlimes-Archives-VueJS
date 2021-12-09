@@ -9,7 +9,7 @@
         "post",
         "get"
       ],
-      "route": "/api/"
+      "route": "/"
     },
     {
       "type": "http",
