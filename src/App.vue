@@ -1,7 +1,7 @@
 <template>
-  <img alt="logo" src="./assets/mama.jpg" />
-  <h1 alt="app_name">Mama Slime Archives</h1>
   <div v-if="messages.length > 0">
+    <img alt="logo" src="./assets/mama.jpg" />
+    <h1 alt="app_name">Mama Slime Archives</h1>
     <ul>
       <li v-for="index in messages" :key="index">
         <HelloWorld :message="index" />
@@ -9,7 +9,10 @@
     </ul>
   </div>
   <div v-if="messages.length == 0">
-    <img src="https://cdn-images-1.medium.com/max/800/0*zzg_YoHtb5wXe98Z.gif" alt="">
+    <img
+      src="https://cdn-images-1.medium.com/max/800/0*zzg_YoHtb5wXe98Z.gif"
+      alt="loader-gif"
+    />
   </div>
 </template>
 
@@ -76,6 +79,13 @@ img {
   display: block;
   margin: 0 auto;
 }
+
+img[alt="loader-gif"] {
+  width: 50vw;
+  min-width: 250px;
+  max-width: 500px;
+}
+
 h1[alt="app_name"] {
   text-align: center;
 }
@@ -96,9 +106,6 @@ p {
 ul {
   list-style-type: none;
   padding: 0;
-  width: 75vw;
-  min-width: 400px;
-  max-width: 600px;
   margin: 0 auto;
 }
 </style>
