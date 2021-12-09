@@ -3,9 +3,9 @@
     "proxies": {
         "read_entries": {
             "matchCondition": {
-                "route": "/api/read_entries/"
+                "route": "/readentries"
             },
-            "backendUri": "https://%host_name%/api/read_entries/"
+            "backendUri": "https://%Host_Name%/api/read_entries/"
         }
     }
 }
