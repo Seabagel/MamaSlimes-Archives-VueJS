@@ -5,7 +5,7 @@
             "matchCondition": {
                 "route": "/api/read_entries/"
             },
-            "backendUri": "https://mamaslimes-archives-function.azurewebsites.net/api/read_entries/"
+            "backendUri": "https://lemon-wave-09f70830f.azurestaticapps.net/api/read_entries/"
         }
     }
 }
