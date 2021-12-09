@@ -5,13 +5,13 @@
             "matchCondition": {
                 "route": "/api/create_entry"
             },
-            "backendUri": "%WEB_HOST%/api/create_entry"
+            "backendUri": "https://mamaslimes-archives-function.azurewebsites.net/api/create_entry"
         },
         "read_entries": {
             "matchCondition": {
                 "route": "/api/read_entries"
             },
-            "backendUri": "%WEB_HOST%/api/read_entries"
+            "backendUri": "https://mamaslimes-archives-function.azurewebsites.net/api/read_entries"
         }
     }
 }
