@@ -3,15 +3,15 @@
     "proxies": {
         "create_entry": {
             "matchCondition": {
-                "route": "/api/create_entry"
+                "route": "/api/create_entry/{*restOfPath}"
             },
-            "backendUri": "https://mamaslimes-archives-function.azurewebsites.net/api/create_entry"
+            "backendUri": "https://mamaslimes-archives-function.azurewebsites.net/api/create_entry/"
         },
         "read_entries": {
             "matchCondition": {
-                "route": "/api/read_entries"
+                "route": "/api/read_entries/{*restOfPath}"
             },
-            "backendUri": "https://mamaslimes-archives-function.azurewebsites.net/api/read_entries"
+            "backendUri": "https://mamaslimes-archives-function.azurewebsites.net/api/read_entries/"
         }
     }
 }
