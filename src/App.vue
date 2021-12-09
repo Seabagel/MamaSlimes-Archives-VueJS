@@ -1,5 +1,5 @@
 <template>
-  <div v-if="messages.length > 0">
+  <div v-if="messages.length > 0" class="responsive">
     <img alt="logo" src="./assets/mama.jpg" />
     <h1 alt="app_name">Mama Slime Archives</h1>
     <ul>
@@ -8,7 +8,7 @@
       </li>
     </ul>
   </div>
-  <div v-if="messages.length == 0">
+  <div v-if="messages.length == 0" class="responsive">
     <img
       src="https://cdn-images-1.medium.com/max/800/0*zzg_YoHtb5wXe98Z.gif"
       alt="loader-gif"
@@ -35,6 +35,7 @@ export default {
       await (
         await fetch(
           `https://mamaslimes-archives-function.azurewebsites.net/api/create_entry?message_id=${message_id}&username=${username}&msgbody=${msgbody}&timestamp=${timestamp}&pictureURL=${pictureURL}`
+          // `/api/create_entry?message_id=${message_id}&username=${username}&msgbody=${msgbody}&timestamp=${timestamp}&pictureURL=${pictureURL}`
         )
       )
         .json()
@@ -43,8 +44,10 @@ export default {
         });
     },
 
+     
     async readEntriesAPI() {
       await (await fetch(`https://mamaslimes-archives-function.azurewebsites.net/api/read_entries/`)).json().then((res) => {
+      // await (await fetch(`/api/read_entries`)).json().then((res) => {
         console.log(res);
         this.messages = res;
       });
@@ -79,7 +82,11 @@ img {
   display: block;
   margin: 0 auto;
 }
-
+img[alt="logo"]{
+  width: 10vw;
+  min-width: 128px;
+  max-width: 500px;
+}
 img[alt="loader-gif"] {
   width: 50vw;
   min-width: 250px;
@@ -106,6 +113,11 @@ p {
 ul {
   list-style-type: none;
   padding: 0;
+}
+div.responsive {
   margin: 0 auto;
+  width: 50vw;
+  min-width: 250px;
+  max-width: 500px;
 }
 </style>
