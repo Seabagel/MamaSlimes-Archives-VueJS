@@ -53,10 +53,6 @@ export default {
 .profile-pic img {
   width: 100%;
 }
-.profileContent {
-  /* background: red; */
-}
-
 li {
   display: inline-block;
 }
