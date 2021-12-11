@@ -19,6 +19,7 @@
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 const fetch = require("node-fetch");
+const API_URL = process.env.VUE_APP_API_URL ? `${process.env.VUE_APP_API_URL}/api` : "api"
 
 export default {
   name: "App",
@@ -34,7 +35,7 @@ export default {
     async createEntryAPI(message_id, username, msgbody, timestamp, pictureURL) {
       await (
         await fetch(
-          `https://mamaslimes-archives-function.azurewebsites.net/api/create_entry?message_id=${message_id}&username=${username}&msgbody=${msgbody}&timestamp=${timestamp}&pictureURL=${pictureURL}`
+          `${API_URL}/create_entry?message_id=${message_id}&username=${username}&msgbody=${msgbody}&timestamp=${timestamp}&pictureURL=${pictureURL}`
           // `/api/create_entry?message_id=${message_id}&username=${username}&msgbody=${msgbody}&timestamp=${timestamp}&pictureURL=${pictureURL}`
         )
       )
@@ -46,7 +47,7 @@ export default {
 
      
     async readEntriesAPI() {
-      await (await fetch(`https://mamaslimes-archives-function.azurewebsites.net/api/read_entries/`)).json().then((res) => {
+      await (await fetch(`${API_URL}/read_entries/`)).json().then((res) => {
       // await (await fetch(`/api/read_entries`)).json().then((res) => {
         console.log(res);
         this.messages = res;

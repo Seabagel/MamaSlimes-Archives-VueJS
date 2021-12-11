@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "api": "swa start dist --api-location api"
+    "instance": "vue-cli-service serve",
+    "launch": "(vue-cli-service build) & swa start dist --api-location api"
   },
   "dependencies": {
     "@azure/static-web-apps-cli": "^0.8.1",
     "core-js": "^3.6.5",
+    "dotenv": "^10.0.0",
     "fetch": "^1.1.0",
     "json": "^11.0.0",
     "node-fetch": "^2.0.0",
