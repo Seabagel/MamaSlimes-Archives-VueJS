@@ -19,7 +19,9 @@
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 const fetch = require("node-fetch");
-const API_URL = process.env.VUE_APP_API_URL ? `${process.env.VUE_APP_API_URL}/api` : "api"
+const API_URL = process.env.VUE_APP_API_URL
+  ? `${process.env.VUE_APP_API_URL}/api`
+  : "api";
 
 export default {
   name: "App",
@@ -36,7 +38,6 @@ export default {
       await (
         await fetch(
           `${API_URL}/create_entry?message_id=${message_id}&username=${username}&msgbody=${msgbody}&timestamp=${timestamp}&pictureURL=${pictureURL}`
-          // `/api/create_entry?message_id=${message_id}&username=${username}&msgbody=${msgbody}&timestamp=${timestamp}&pictureURL=${pictureURL}`
         )
       )
         .json()
@@ -45,11 +46,9 @@ export default {
         });
     },
 
-     
     async readEntriesAPI() {
       await (await fetch(`${API_URL}/read_entries/`)).json().then((res) => {
-      // await (await fetch(`/api/read_entries`)).json().then((res) => {
-        console.log(res);
+        // console.log(res);
         this.messages = res;
       });
     },
@@ -57,6 +56,7 @@ export default {
 
   async mounted() {
     this.readEntriesAPI();
+    // console.log(API_URL);
     // this.createEntryAPI(
     //   this.messages,
     //   350989871411625987,
@@ -83,7 +83,7 @@ img {
   display: block;
   margin: 0 auto;
 }
-img[alt="logo"]{
+img[alt="logo"] {
   width: 10vw;
   min-width: 128px;
   max-width: 500px;
