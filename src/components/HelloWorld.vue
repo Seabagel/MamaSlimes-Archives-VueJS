@@ -40,9 +40,9 @@ export default {
 
 .message-box {
   background: #20293a;
-  margin: 1rem;
+  margin: .8rem 1rem;
   padding: 1.125rem;
-  border-radius: 3px;
+  border-radius: 8px;
 }
 .profile-info {
   margin-bottom: 0.5rem;
