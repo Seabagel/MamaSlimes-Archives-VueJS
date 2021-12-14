@@ -7,7 +7,7 @@
       <div class="profileContent">
         <div class="profile-info">
           <span class="user-color">{{ message.username }}</span>
-          {{ message.timestamp }}
+          <span class="smoll">({{ message.timestamp }})</span>
         </div>
         {{ message.msgbody }}
       </div>
@@ -52,6 +52,10 @@ export default {
 }
 .profile-pic img {
   width: 100%;
+}
+.smoll {
+  font-style: italic;
+  font-size: .85rem;
 }
 li {
   display: inline-block;
