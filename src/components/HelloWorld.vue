@@ -7,7 +7,7 @@
       <div class="profileContent">
         <div class="profile-info">
           <span class="user-color">{{ message.username }}</span>
-          <span class="smoll">({{ message.timestamp }})</span>
+          <span class="smoll"> - {{ message.timestamp }}</span>
         </div>
         {{ message.msgbody }}
       </div>
@@ -54,8 +54,8 @@ export default {
   width: 100%;
 }
 .smoll {
-  font-style: italic;
-  font-size: .85rem;
+  font-size: .8rem;
+  color: #657da0;
 }
 li {
   display: inline-block;
