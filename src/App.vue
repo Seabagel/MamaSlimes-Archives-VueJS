@@ -9,6 +9,7 @@
     </ul>
   </div>
   <div v-if="messages.length == 0" class="responsive">
+    <h1><a href="/.auth/login/aad">Hello World</a></h1>
     <img
       src="https://cdn-images-1.medium.com/max/800/0*zzg_YoHtb5wXe98Z.gif"
       alt="loader-gif"
